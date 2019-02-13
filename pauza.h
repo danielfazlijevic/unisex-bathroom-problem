@@ -18,3 +18,14 @@ void pauza(int pol){
     printf("Osoba %s pola je izasao/la iz WC-a posle %d sekunde.\n", imePola, vreme);
     //  printf("Osoba je provela u WC-u %d sekunde\n", vreme);
 }
+char *imePola(int pol){
+    char *ime = malloc(sizeof(char)*7);
+    if(pol == 0)
+	strcpy(ime, "muskog");
+    else
+	strcpy(ime, "zenskog");
+    return ime;
+}
+void dolazak(int pol) {
+    printf("Osoba %s pola zeli da udje u WC.\n", imePola(pol));
+}

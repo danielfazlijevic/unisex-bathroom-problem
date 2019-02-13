@@ -63,6 +63,7 @@ int main(void){
 
 void *zena(void *param)
 {
+    dolazak(1);
     sem_wait(&z);
     sem_wait(&zena_sem);
     sem_wait(&y);
@@ -90,6 +91,7 @@ void *zena(void *param)
 
 void *muskarac(void *param)
 {
+    dolazak(0);
     sem_wait(&z);
     sem_wait(&muskarac_sem);
     sem_wait(&x);

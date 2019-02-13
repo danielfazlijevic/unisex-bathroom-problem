@@ -1,13 +1,11 @@
 # Unisex Bathroom Problem
-## Projektni rad iz Arhitekture racunara i organizacija sistema
+## Projektni rad iz Arhitekture racunara i operativnih sistema
 
 
 
 ### O projektu
 Mentor: Ivan Milenkovic
-
 Student: Daniel Fazlijevic br. indeksa 22/17
-
 Fakultet Organizacionih Nauka, Univerzitet u Beogradu.
 
 
@@ -15,8 +13,8 @@ Fakultet Organizacionih Nauka, Univerzitet u Beogradu.
 Problem se nalazi u knjizi 'The Little Book Of Semaphores'
 
 Muski tolet se pretvara u uniseks tolet. Uslovi su sledeci:
-- Osobe istog pola ne mogu istovremeno biti u toletu
-- Najvise 3 osobe mogu biti istovremeno u toletu
+- Osobe istog pola ne mogu istovremeno biti u toaletu
+- Najvise 3 osobe mogu biti istovremeno u toaletu
 
 
 ### Resenje problema
