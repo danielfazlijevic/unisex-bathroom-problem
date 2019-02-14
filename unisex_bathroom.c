@@ -122,7 +122,7 @@ void *muskarac(void *param)
     sem_post(&max_sem);
 
     sem_wait(&x);
-
+d
     broj_muskaraca--;
 
     if(broj_muskaraca==0)
