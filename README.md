@@ -14,7 +14,7 @@ Fakultet Organizacionih Nauka, Univerzitet u Beogradu.
 ### Opis problema
 Problem se nalazi u knjizi 'The Little Book Of Semaphores'
 
-Muski toalet se pretvara u uniseks tolet. Uslovi su sledeci:
+Muski toalet se pretvara u uniseks toalet. Uslovi su sledeci:
 - Osobe istog pola ne mogu istovremeno biti u toaletu
 - Najvise 3 osobe mogu biti istovremeno u toaletu
 
