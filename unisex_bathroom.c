@@ -41,6 +41,7 @@ int main(void){
     printf("Ukupno %d osoba\n", ukupan_broj_zaposlenih);
        
     // postavljamo semafore na default vrednosti
+    // sem_init funkcija -> sem_init(adresa semafora, 0 ukoliko zelimo da semafor bude deljen izmedju niti, inicijalna vrednost semafora)
     sem_init(&x, 0, 1);  
     sem_init(&y, 0, 1);
     sem_init(&z, 0, 1);
@@ -65,7 +66,7 @@ int main(void){
              pthread_create(&zaposleni[i], NULL, muskarac, NULL);
         pauza();
     }
-
+    // join-ujemo sve stvorene niti u glavnu nit
     for(i = 0; i < ukupan_broj_zaposlenih; i++){     
        pthread_join(zaposleni[i], NULL);
     }
@@ -74,12 +75,13 @@ int main(void){
 }
 
 void *zena(void *param){
+    // Obavestavamo o dolasku osobe do toaleta
     dolazak(1);
     sem_wait(&z);
     sem_wait(&zena_sem);
     sem_wait(&y);
     broj_zena++;
-    if(broj_zena==1)
+    if(broj_zena==1) // sada samo osobe zenskog pola mogu uci u toalet
        sem_wait(&muskarac_sem); 
     sem_post(&y);
     sem_post(&zena_sem);
@@ -87,9 +89,7 @@ void *zena(void *param){
  
     sem_wait(&max_sem);
 
-   // printf("Osoba zenskog pola je usla u wc\n");
     ulazak(1);
-   // printf("Osoba zenskog pola je izasla iz wc-a.\n");
 
     sem_post(&max_sem);     
 
@@ -122,7 +122,7 @@ void *muskarac(void *param)
     sem_post(&max_sem);
 
     sem_wait(&x);
-d
+
     broj_muskaraca--;
 
     if(broj_muskaraca==0)
